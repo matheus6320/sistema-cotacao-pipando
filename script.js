@@ -862,13 +862,6 @@ function gerarCotacao() {
     dataStr,
     status: 'pendente'
   });
-  // SALVAR COTAÇÃO ATUAL
-const nota = document.getElementById('nota-body');
-
-if (nota && nota.innerHTML.trim() !== '') {
-  localStorage.setItem('cotacaoAtual', nota.innerHTML);
-}
-}
 }
 
 // ===== SALVAR IMAGEM =====
@@ -1344,15 +1337,3 @@ carregar();
 renderConfig();
 renderSelectGrid();
 atualizarBadge();
-// RECUPERAR COTAÇÃO AO RECARREGAR
-window.addEventListener('load', () => {
-  const cotacaoSalva = localStorage.getItem('cotacaoAtual');
-
-  if (cotacaoSalva) {
-    const nota = document.getElementById('nota-body');
-
-    if (nota) {
-      nota.innerHTML = cotacaoSalva;
-    }
-  }
-});

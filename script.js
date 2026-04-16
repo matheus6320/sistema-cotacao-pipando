@@ -863,10 +863,13 @@ function gerarCotacao() {
     status: 'pendente'
   });
   // SALVAR COTAÇÃO ATUAL
-const nota = document.querySelector('.nota-fiscal');
+setTimeout(() => {
+  const nota = document.querySelector('.nota-fiscal');
 
-if (nota) {
-  localStorage.setItem('cotacaoAtual', nota.innerHTML);
+  if (nota) {
+    localStorage.setItem('cotacaoAtual', nota.innerHTML);
+  }
+}, 100);
 }
 }
 

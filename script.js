@@ -864,7 +864,7 @@ function gerarCotacao() {
   });
   // SALVAR COTAÇÃO ATUAL
 setTimeout(() => {
-  const nota = document.querySelector('.nota-fiscal');
+  const nota = document.getElementById('nota-body');
 
   if (nota) {
     localStorage.setItem('cotacaoAtual', nota.innerHTML);
@@ -1351,7 +1351,7 @@ window.addEventListener('load', () => {
   const cotacaoSalva = localStorage.getItem('cotacaoAtual');
 
   if (cotacaoSalva) {
-    const nota = document.querySelector('.nota-fiscal');
+    const nota = document.getElementById('nota-body');
 
     if (nota) {
       nota.innerHTML = cotacaoSalva;

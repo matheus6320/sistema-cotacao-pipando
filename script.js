@@ -862,6 +862,9 @@ function gerarCotacao() {
     dataStr,
     status: 'pendente'
   });
+  // 👉 ADICIONA ISSO AQUI
+document.getElementById('sucesso-box').style.display = 'block';
+
 }
 
 // ===== SALVAR IMAGEM =====

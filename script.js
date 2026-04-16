@@ -863,13 +863,11 @@ function gerarCotacao() {
     status: 'pendente'
   });
   // SALVAR COTAÇÃO ATUAL
-setTimeout(() => {
-  const nota = document.getElementById('nota-body');
+const nota = document.getElementById('nota-body');
 
-  if (nota) {
-    localStorage.setItem('cotacaoAtual', nota.innerHTML);
-  }
-}, 100);
+if (nota && nota.innerHTML.trim() !== '') {
+  localStorage.setItem('cotacaoAtual', nota.innerHTML);
+}
 }
 }
 

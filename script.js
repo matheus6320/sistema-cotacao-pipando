@@ -862,6 +862,12 @@ function gerarCotacao() {
     dataStr,
     status: 'pendente'
   });
+  // SALVAR COTAÇÃO ATUAL
+const nota = document.querySelector('.nota-fiscal');
+
+if (nota) {
+  localStorage.setItem('cotacaoAtual', nota.innerHTML);
+}
 }
 
 // ===== SALVAR IMAGEM =====
@@ -1337,3 +1343,15 @@ carregar();
 renderConfig();
 renderSelectGrid();
 atualizarBadge();
+// RECUPERAR COTAÇÃO AO RECARREGAR
+window.addEventListener('load', () => {
+  const cotacaoSalva = localStorage.getItem('cotacaoAtual');
+
+  if (cotacaoSalva) {
+    const nota = document.querySelector('.nota-fiscal');
+
+    if (nota) {
+      nota.innerHTML = cotacaoSalva;
+    }
+  }
+});
